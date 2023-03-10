@@ -7,7 +7,7 @@ header = {"Cookie": "_cfuvid=WDlonye8yEuGHnJq0Gx9KFJVeZsmh7mTZ8ZldW27rGE-1678462
 # print(icerik)
 for i in icerik.split("\n"):
     print(i)
-    url="https://bandirma.edu.tr"+str(i)
+    url="http://10.0.2.4"+str(i)
     sonuc=requests.get(url=url,headers=header)
     if "200" in str(sonuc.status_code):
         print("Dosya ya da dizin var",i)
