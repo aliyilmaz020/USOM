@@ -1,0 +1,14 @@
+import paramiko
+ssh = paramiko.SSHClient()
+ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy)
+ssh.connect("10.0.2.5", username="msfadmin", password="msfadmin")
+stdin, stdout, stderr = ssh.exec_command("cat /etc/passwd")
+for i in (stdout.read().decode('ascii').split("\n")):
+
+    try:
+        if 0 == int((str(i).split(":")[2])):
+            print("uid sıfır kullanıcı: ",str(i).split(":")[0])
+    except:
+        pass
+    dosya = open("paramiko2.txt","a")
+    dosya.write(i)
