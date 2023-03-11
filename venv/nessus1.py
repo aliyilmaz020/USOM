@@ -1,3 +1,4 @@
+#nessus windows envarter çıkarma
 import requests
 import subprocess
 header = {"X-ApiKeys": "accessKey=45dac1f3ced6885ee647ef6dc5db2cd6893994f0f4a261f7f6d0802f10144ebd; "
